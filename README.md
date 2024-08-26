@@ -9,4 +9,3 @@
 ## ライセンス
 
 このプロジェクトはMITライセンスの下で公開されています。
-# prime_video_intro_skipper
