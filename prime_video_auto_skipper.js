@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 자동으로 스킵합니다
 // @description:ru      Автоматически пропускает интро и окончание
 // @description:de      Überspringt automatisch Intro und Ende
-// @version             1.1.0
+// @version             1.1.1
 // @author              Yos_sy
 // @match               https://www.amazon.com/*
 // @match               https://www.amazon.ca/*
