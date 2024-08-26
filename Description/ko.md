@@ -4,7 +4,7 @@
 
 ## 기여
 
-버그 보고 및 기능 제안을 환영합니다. [이슈 열기](https://github.com/yossy17/prime_video_intro_skipper/issues) 또는 [풀 리퀘스트 생성](https://github.com/yossy17/prime_video_intro_skipper/pulls)을 해주세요.
+버그 보고 및 기능 제안을 환영합니다. [이슈 열기](https://github.com/yossy17/prime-video-intro-skipper/issues) 또는 [풀 리퀘스트 생성](https://github.com/yossy17/prime-video-intro-skipper/pulls)을 해주세요.
 
 ## 라이선스
 

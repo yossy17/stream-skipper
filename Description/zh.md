@@ -4,7 +4,7 @@
 
 ## 贡献
 
-欢迎报告错误和提出功能建议。请[提出问题](https://github.com/yossy17/prime_video_intro_skipper/issues)或[创建拉取请求](https://github.com/yossy17/prime_video_intro_skipper/pulls)。
+欢迎报告错误和提出功能建议。请[提出问题](https://github.com/yossy17/prime-video-intro-skipper/issues)或[创建拉取请求](https://github.com/yossy17/prime-video-intro-skipper/pulls)。
 
 ## 许可证
 

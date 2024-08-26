@@ -4,7 +4,7 @@
 
 ## Вклад в проект
 
-Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/prime_video_intro_skipper/issues) или [отправьте pull request](https://github.com/yossy17/prime_video_intro_skipper/pulls).
+Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/prime-video-intro-skipper/issues) или [отправьте pull request](https://github.com/yossy17/prime-video-intro-skipper/pulls).
 
 ## Лицензия
 

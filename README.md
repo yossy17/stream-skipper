@@ -4,7 +4,7 @@
 
 ## 貢献
 
-バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/prime_video_intro_skipper/issues)または[プルリクエスト](https://github.com/yossy17/prime_video_intro_skipper/pulls)を作成してください。
+バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/prime-video-intro-skipper/issues)または[プルリクエスト](https://github.com/yossy17/prime-video-intro-skipper/pulls)を作成してください。
 
 ## ライセンス
 
