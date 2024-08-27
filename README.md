@@ -1,4 +1,7 @@
-このスクリプトは、[Prime Video](https://www.amazon.co.jp/gp/video/storefront)で、イントロとエンディングを自動スキップする機能を提供します。
+このスクリプトは、以下のサービスでイントロとエンディングを自動スキップする機能を提供します。
+
+- [Prime Video](https://amazon.co.jp/gp/video/storefront)
+- [Netflix](https://netflix.com)
 
 ## 使い方
 
@@ -8,7 +11,13 @@
 
 ## 貢献
 
-バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/prime-video-auto-skipper/issues)または[プルリクエスト](https://github.com/yossy17/prime-video-auto-skipper/pulls)を作成してください。
+バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/streaming-services-skipper/issues)または[プルリクエスト](https://github.com/yossy17/streaming-services-skipper/pulls)を作成してください。
+
+このスクリプトは、ボタン要素のクラス名を指定し、その要素を物理的にクリックするという簡単な仕組みで動作しています。
+そのため、例えば`イントロをスキップ`ボタンや`次のエピソード`ボタンがあるストリーミングサービスでは基本的に機能させることができます。
+しかし、私自身多くのサービスに加入しておらず、それらの要素を知る方法がありません。
+コードに追加することで、このスクリプトのみでより多くのサービスに対応することができます。
+もしよろしければ、各サービスのセレクターを教えていただけるとサービス向上につなげることができます。
 
 ## ライセンス
 
