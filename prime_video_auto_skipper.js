@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 자동으로 스킵합니다
 // @description:ru      Автоматически пропускает интро и окончание
 // @description:de      Überspringt automatisch Intro und Ende
-// @version             1.1.1
+// @version             1.2.0
 // @author              Yos_sy
 // @match               https://www.amazon.com/*
 // @match               https://www.amazon.ca/*
@@ -49,8 +49,21 @@
   // イントロとエンディングのスキップ機能を提供するクラス
   class IntroEndingSkipper {
     constructor() {
-      this.skipEnabled = true; // スキップ機能の有効/無効を制御するフラグ
-      this.skipDelay = 3000; // スキップ機能を無効にする期間（ms）
+      this.skipEnabled = this.loadSkipState(); // スキップ機能の状態をローカルストレージから読み込む
+      this.initToggleButton(); // トグルボタンの初期化
+      this.setupShortcut(); // ショートカットキーの設定
+      this.updateToggleButton(); // トグルボタンの状態を更新
+    }
+
+    // スキップ機能の状態をローカルストレージから読み込むメソッド
+    loadSkipState() {
+      const storedState = localStorage.getItem("skipEnabled");
+      return storedState === null ? true : JSON.parse(storedState);
+    }
+
+    // スキップ機能の状態をローカルストレージに保存するメソッド
+    saveSkipState() {
+      localStorage.setItem("skipEnabled", JSON.stringify(this.skipEnabled));
     }
 
     // イントロのスキップを実行するメソッド
@@ -64,7 +77,6 @@
       if (skipButton) {
         skipButton.click(); // イントロをスキップ
         console.log("Intro skipped"); // スキップ処理をログに記録
-        this.disableSkipping(); // スキップ機能を一時的に無効化
       }
     }
 
@@ -79,24 +91,79 @@
       if (endingSkipButton) {
         endingSkipButton.click(); // エンディングをスキップ
         console.log("Ending skipped"); // スキップ処理をログに記録
-        this.disableSkipping(); // スキップ機能を一時的に無効化
       }
     }
 
-    // スキップ機能を一時的に無効にし、指定時間後に再度有効にするメソッド
-    disableSkipping() {
-      this.skipEnabled = false; // スキップを無効に設定
+    // トグルボタンを初期化するメソッド
+    initToggleButton() {
+      this.toggleButton = document.createElement("div");
+      this.toggleButton.textContent = "Skip: ON";
+      // CSSスタイルをインラインで適用
+      this.toggleButton.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2147483647;
+        color: #fff;
+        border: 2px solid #fff;
+        padding: 10px 20px;
+        border-radius: 25px;
+        display: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all 0.5s ease;
+      `;
+      document.body.appendChild(this.toggleButton);
+    }
+
+    // トグルボタンの表示を更新するメソッド
+    updateToggleButton() {
+      this.toggleButton.textContent = this.skipEnabled
+        ? "Skip: ON"
+        : "Skip: OFF";
+      this.toggleButton.style.backgroundColor = this.skipEnabled
+        ? "#00800090"
+        : "#ff000090";
+    }
+
+    // スキップ機能のオン・オフを切り替えるメソッド
+    toggleSkipping() {
+      this.skipEnabled = !this.skipEnabled;
+      this.saveSkipState(); // 状態をローカルストレージに保存
+      this.updateToggleButton();
+
+      // ボタンを表示し、フェードアウト効果を適用
+      this.toggleButton.style.display = "block";
+      this.toggleButton.style.opacity = "1";
+
       setTimeout(() => {
-        this.skipEnabled = true; // 指定時間後にスキップ機能を再度有効化
-        console.log("Skipping is re-enabled"); // 再有効化をログに記録
-      }, this.skipDelay);
+        this.toggleButton.style.opacity = "0";
+        setTimeout(() => {
+          this.toggleButton.style.display = "none";
+        }, 500); // フェードアウト後に非表示
+      }, 1000); // 1秒後にフェードアウト開始
+
+      console.log(`Skipping is ${this.skipEnabled ? "enabled" : "disabled"}`);
+    }
+
+    // ショートカットキーを設定するメソッド
+    setupShortcut() {
+      document.addEventListener("keydown", (event) => {
+        if (event.altKey && event.key === "n") {
+          this.toggleSkipping();
+        }
+      });
     }
 
     // DOMの変更を監視し、スキップ処理を実行するメソッド
     observe() {
       const observer = new MutationObserver(() => {
-        this.skipIntro(); // イントロのスキップ処理
-        this.skipEnding(); // エンディングのスキップ処理
+        if (this.skipEnabled) {
+          // スキップが有効な場合のみスキップ処理を実行
+          this.skipIntro(); // イントロのスキップ処理
+          this.skipEnding(); // エンディングのスキップ処理
+        }
       });
       // ドキュメント全体の子要素とサブツリーの変更を監視
       observer.observe(document.body, { childList: true, subtree: true });

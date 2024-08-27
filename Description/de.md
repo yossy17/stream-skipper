@@ -1,5 +1,9 @@
 Dieses Skript bietet die Funktion, Intros und Enden auf [Prime Video](https://www.amazon.co.jp/gp/video/storefront) automatisch zu überspringen.
 
+## Verwendung
+
+`Alt + n`, um die Funktion ein- und auszuschalten.
+
 ---
 
 ## Mitwirken

@@ -1,5 +1,9 @@
 This script provides functionality to automatically skip intros and endings on [Prime Video](https://www.amazon.co.jp/gp/video/storefront).
 
+## Usage
+
+`Alt + n` to turn the function on and off.
+
 ---
 
 ## Contributing

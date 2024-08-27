@@ -1,4 +1,8 @@
-이 스크립트는 [Prime Video](https://www.amazon.co.jp/gp/video/storefront)에서 인트로와 엔딩을 자동으로 건너뛰는 기능을 제공합니다.
+Этот скрипт обеспечивает автоматический пропуск вступлений и концовок в [Prime Video](https://www.amazon.co.jp/gp/video/storefront).
+
+## Использование
+
+`Alt + n` для включения и выключения функции.
 
 ---
 

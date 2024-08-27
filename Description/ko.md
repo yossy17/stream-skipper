@@ -1,5 +1,9 @@
 이 스크립트는 [Prime Video](https://www.amazon.co.jp/gp/video/storefront)에서 인트로와 엔딩을 자동으로 건너뛰는 기능을 제공합니다.
 
+## 사용법
+
+`Alt + n` 으로 기능을 켜고 끌 수 있습니다.
+
 ---
 
 ## 기여

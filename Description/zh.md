@@ -1,5 +1,9 @@
 此脚本提供了在[Prime Video](https://www.amazon.co.jp/gp/video/storefront)上自动跳过片头和片尾的功能。
 
+## 使用方法
+
+`Alt + n` 可打开或关闭该功能。
+
 ---
 
 ## 贡献

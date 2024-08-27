@@ -1,5 +1,9 @@
 このスクリプトは、[Prime Video](https://www.amazon.co.jp/gp/video/storefront)で、イントロとエンディングを自動スキップする機能を提供します。
 
+## 使い方
+
+`Alt + n`で機能のオン/オフを切り替えることができます。
+
 ---
 
 ## 貢献
