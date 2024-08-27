@@ -11,7 +11,7 @@
 
 ## 貢献
 
-バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/streaming-services-skipper/issues)または[プルリクエスト](https://github.com/yossy17/streaming-services-skipper/pulls)を作成してください。
+バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/streaming-video-skipper/issues)または[プルリクエスト](https://github.com/yossy17/streaming-video-skipper/pulls)を作成してください。
 
 このスクリプトは、ボタン要素のクラス名を指定し、その要素を物理的にクリックするという簡単な仕組みで動作しています。
 そのため、例えば`イントロをスキップ`ボタンや`次のエピソード`ボタンがあるストリーミングサービスでは基本的に機能させることができます。

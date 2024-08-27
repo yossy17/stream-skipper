@@ -11,7 +11,7 @@
 
 ## Вклад в проект
 
-Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/streaming-services-skipper/issues) или [отправьте pull request](https://github.com/yossy17/streaming-services-skipper/pulls).
+Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/streaming-video-skipper/issues) или [отправьте pull request](https://github.com/yossy17/streaming-video-skipper/pulls).
 
 Этот скрипт работает по простому механизму, указывая имя класса элементов кнопок и физически нажимая на эти элементы.
 Поэтому он может в основном функционировать на стриминговых сервисах, где есть кнопки вроде `Пропустить интро` или `Следующий эпизод`.

@@ -11,7 +11,7 @@ Dieses Skript bietet eine Funktion zum automatischen Überspringen von Intros un
 
 ## Mitwirken
 
-Fehlerberichte und Funktionsvorschläge sind willkommen. Bitte [öffnen Sie ein Issue](https://github.com/yossy17/streaming-services-skipper/issues) oder [erstellen Sie einen Pull Request](https://github.com/yossy17/streaming-services-skipper/pulls).
+Fehlerberichte und Funktionsvorschläge sind willkommen. Bitte [öffnen Sie ein Issue](https://github.com/yossy17/streaming-video-skipper/issues) oder [erstellen Sie einen Pull Request](https://github.com/yossy17/streaming-video-skipper/pulls).
 
 Dieses Skript funktioniert nach einem einfachen Mechanismus, indem es den Klassennamen von Schaltflächen-Elementen angibt und diese Elemente physisch anklickt.
 Daher kann es grundsätzlich auf Streaming-Diensten funktionieren, die Schaltflächen wie `Intro überspringen` oder `Nächste Episode` haben.

@@ -11,7 +11,7 @@ This script provides a function to automatically skip intros and endings on the 
 
 ## Contributing
 
-Bug reports and feature suggestions are welcome. Please [open an issue](https://github.com/yossy17/streaming-services-skipper/issues) or [create a pull request](https://github.com/yossy17/streaming-services-skipper/pulls).
+Bug reports and feature suggestions are welcome. Please [open an issue](https://github.com/yossy17/streaming-video-skipper/issues) or [create a pull request](https://github.com/yossy17/streaming-video-skipper/pulls).
 
 This script operates on a simple mechanism of specifying the class name of button elements and physically clicking those elements.
 Therefore, it can basically function on streaming services that have buttons like `Skip Intro` or `Next Episode`.
