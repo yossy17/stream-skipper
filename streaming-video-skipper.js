@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.0.1
+// @version             2.1.0
 // @author              Yos_sy
 // @match               https://www.amazon.com/*
 // @match               https://www.amazon.ca/*
@@ -49,90 +49,115 @@
 
   class IntroEndingSkipper {
     constructor() {
-      this.skipEnabled = this.loadSkipState(); // スキップ機能の状態をローカルストレージから読み込む
-      this.initToggleButton(); // トグルボタンの初期化
-      this.setupShortcut(); // ショートカットキーの設定
-      this.updateToggleButton(); // トグルボタンの状態を更新
+      this.skipIntroEnabled = this.loadState("skipIntroEnabled", true);
+      this.skipEndingEnabled = this.loadState("skipEndingEnabled", true);
+      this.skipEnabled = this.loadState("skipEnabled", true);
+      this.initToggleButton();
+      this.setupShortcut();
+      this.updateToggleButton();
+      this.initHUD();
+      this.updateHUD();
+
+      this.buttonSelectors = {
+        primeVideo: {
+          intro:
+            "button.fqye4e3.f1ly7q5u.fk9c3ap.fz9ydgy.f1xrlb00.f1hy0e6n.fgbpje3.f1uteees.f1h2a8xb.atvwebplayersdk-skipelement-button.fjgzbz9.fiqc9rt.fg426ew.f1ekwadg",
+          ending:
+            "div.atvwebplayersdk-nextupcard-button.fixbm5z.f1nog967.fobx3y5",
+        },
+        netflix: {
+          intro:
+            "button.button-primary.watch-video--skip-content-button.medium.hasLabel.default-ltr-cache-1mjzmhv",
+          ending:
+            "button.color-primary.hasLabel.hasIcon.default-ltr-cache-18ezbm2",
+        },
+      };
     }
 
-    loadSkipState() {
-      const storedState = localStorage.getItem("skipEnabled");
-      return storedState === null ? true : JSON.parse(storedState);
+    // ローカルストレージから状態を読み込み
+    loadState(key, defaultValue) {
+      const storedState = localStorage.getItem(key);
+      return storedState === null ? defaultValue : JSON.parse(storedState);
     }
 
-    saveSkipState() {
-      localStorage.setItem("skipEnabled", JSON.stringify(this.skipEnabled));
+    // 状態をローカルストレージに保存
+    saveState(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
     }
 
+    // イントロをスキップ
     skipIntro() {
-      if (!this.skipEnabled) return;
+      if (!this.skipIntroEnabled) return;
 
-      // イントロスキップボタンを複数のセレクタで探し、存在すればクリック
-      const skipButtons = [
-        "button.fqye4e3.f1ly7q5u.fk9c3ap.fz9ydgy.f1xrlb00.f1hy0e6n.fgbpje3.f1uteees.f1h2a8xb.atvwebplayersdk-skipelement-button.fjgzbz9.fiqc9rt.fg426ew.f1ekwadg", // Prime Video
-        "button.button-primary.watch-video--skip-content-button.medium.hasLabel.default-ltr-cache-1mjzmhv", // Netflix
-      ];
-      for (const selector of skipButtons) {
-        const skipButton = document.querySelector(selector);
+      for (const service in this.buttonSelectors) {
+        const skipButton = document.querySelector(
+          this.buttonSelectors[service].intro
+        );
         if (skipButton) {
           skipButton.click();
-          console.log("Intro skipped");
-          break; // 1つ見つけたらループを終了
+          console.log(`Intro skipped for ${service}`);
+          break;
         }
       }
     }
 
+    // エンディングをスキップ
     skipEnding() {
-      if (!this.skipEnabled) return;
+      if (!this.skipEndingEnabled) return;
 
-      // エンディングスキップボタンを複数のセレクタで探し、存在すればクリック
-      const endingButtons = [
-        "div.atvwebplayersdk-nextupcard-button.fixbm5z.f1nog967.fobx3y5", // Prime Video
-        "button.color-primary.hasLabel.hasIcon.default-ltr-cache-18ezbm2", // Netflix
-      ];
-      for (const selector of endingButtons) {
-        const endingButton = document.querySelector(selector);
+      for (const service in this.buttonSelectors) {
+        const endingButton = document.querySelector(
+          this.buttonSelectors[service].ending
+        );
         if (endingButton) {
           endingButton.click();
-          console.log("Ending skipped");
-          break; // 1つ見つけたらループを終了
+          console.log(`Ending skipped for ${service}`);
+          break;
         }
       }
     }
 
+    // トグルボタンを初期化
     initToggleButton() {
       this.toggleButton = document.createElement("div");
-      this.toggleButton.textContent = "Skip: ON";
+      this.toggleButton.textContent = this.skipEnabled
+        ? "Skip: ON"
+        : "Skip: OFF";
       this.toggleButton.style.cssText = `
         position: fixed;
         bottom: 20px;
         right: 20px;
         z-index: 2147483647;
         color: #fff;
+        background-color: ${this.skipEnabled ? "rgba(0, 128, 0, 0.7)" : "rgba(255, 0, 0, 0.7)"};
         border: 2px solid #fff;
         padding: 10px 20px;
         border-radius: 25px;
-        display: none;
         font-family: Arial, sans-serif;
         font-size: 16px;
         font-weight: bold;
-        transition: all 0.5s ease;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: none;
       `;
       document.body.appendChild(this.toggleButton);
     }
 
+    // トグルボタンの表示を更新
     updateToggleButton() {
       this.toggleButton.textContent = this.skipEnabled
         ? "Skip: ON"
         : "Skip: OFF";
       this.toggleButton.style.backgroundColor = this.skipEnabled
-        ? "#00800090"
-        : "#ff000090";
+        ? "rgba(0, 128, 0, 0.7)"
+        : "rgba(255, 0, 0, 0.7)";
     }
 
+    // スキップ機能の全体的な切り替え
     toggleSkipping() {
       this.skipEnabled = !this.skipEnabled;
-      this.saveSkipState();
+      this.saveState("skipEnabled", this.skipEnabled);
       this.updateToggleButton();
 
       this.toggleButton.style.display = "block";
@@ -142,20 +167,85 @@
         this.toggleButton.style.opacity = "0";
         setTimeout(() => {
           this.toggleButton.style.display = "none";
-        }, 500);
+        }, 100);
       }, 1000);
 
       console.log(`Skipping is ${this.skipEnabled ? "enabled" : "disabled"}`);
     }
 
+    // イントロスキップの切り替え
+    toggleSkipIntro() {
+      if (!this.skipEnabled) return;
+      this.skipIntroEnabled = !this.skipIntroEnabled;
+      this.saveState("skipIntroEnabled", this.skipIntroEnabled);
+      this.updateHUD();
+
+      console.log(
+        `Intro Skipping is ${this.skipIntroEnabled ? "enabled" : "disabled"}`
+      );
+    }
+
+    // エンディングスキップの切り替え
+    toggleSkipEnding() {
+      if (!this.skipEnabled) return;
+      this.skipEndingEnabled = !this.skipEndingEnabled;
+      this.saveState("skipEndingEnabled", this.skipEndingEnabled);
+      this.updateHUD();
+
+      console.log(
+        `Ending Skipping is ${this.skipEndingEnabled ? "enabled" : "disabled"}`
+      );
+    }
+
+    // キーボードショートカットの設定
     setupShortcut() {
       document.addEventListener("keydown", (event) => {
-        if (event.altKey && event.key === "n") {
-          this.toggleSkipping();
-        }
+        if (event.altKey && event.key === "z") this.toggleSkipping();
+        else if (event.altKey && event.key === "x") this.toggleSkipIntro();
+        else if (event.altKey && event.key === "c") this.toggleSkipEnding();
       });
     }
 
+    // HUDを初期化
+    initHUD() {
+      this.hudElement = document.createElement("div");
+      this.hudElement.style.cssText = `
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 2147483647;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+        font: 16px/1.6 Arial, sans-serif;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s ease-in-out;
+        max-width: 300px;
+        word-wrap: break-word;
+      `;
+      document.body.appendChild(this.hudElement);
+    }
+
+    // HUDを更新
+    updateHUD() {
+      this.hudElement.innerHTML = `
+        <strong>Skipping Status:</strong><br>
+        Intro: ${this.skipIntroEnabled ? "ON" : "OFF"}<br>
+        Ending: ${this.skipEndingEnabled ? "ON" : "OFF"}
+      `;
+      this.hudElement.style.display = "block";
+      this.hudElement.style.opacity = "1";
+      setTimeout(() => {
+        this.hudElement.style.opacity = "0";
+        setTimeout(() => {
+          this.hudElement.style.display = "none";
+        }, 100);
+      }, 1000);
+    }
+
+    // DOMの変更を監視し、スキップ機能を適用
     observe() {
       const observer = new MutationObserver(() => {
         if (this.skipEnabled) {
