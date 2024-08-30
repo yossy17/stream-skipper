@@ -1,11 +1,19 @@
-This script provides a function to automatically skip intros and endings on the following services.
+This script provides functionality to automatically skip intros and endings for the following services:
 
 - [Prime Video](https://amazon.co.jp/gp/video/storefront)
 - [Netflix](https://netflix.com)
 
 ## Usage
 
-`Alt + n` to turn the function on and off.
+You can change settings with shortcut keys.  
+The last two individual settings can only be changed when the overall skip function is turned `ON`.
+
+- `Alt + n`: Toggle the overall skip function `ON`/`OFF`.
+- `Alt + x`: Toggle intro skipping `ON`/`OFF`.
+- `Alt + c`: Toggle ending skipping `ON`/`OFF`.
+
+The script status can be checked on the HUD displayed at the top-left corner of the screen.  
+The HUD displays the current status of intro and ending skipping.
 
 ---
 
