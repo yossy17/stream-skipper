@@ -102,18 +102,18 @@
 
     // イントロをスキップ
     skipIntro() {
-      if (!this.skipIntroEnabled) return;
-
       for (const service in this.buttonSelectors) {
-        const skipButton = document.querySelector(
-          this.buttonSelectors[service].intro.selector
-        );
-        if (skipButton) {
-          setTimeout(() => {
-            skipButton.click();
-            console.log(`Intro skipped for ${service}`);
-          }, this.buttonSelectors[service].intro.delay);
-          break;
+        const { selector, delay } = this.buttonSelectors[service].intro;
+
+        if (this.skipEnabled && this.skipIntroEnabled) {
+          const introButton = document.querySelector(selector);
+          if (introButton) {
+            setTimeout(() => {
+              introButton.click();
+              console.log(`Intro skipped for ${service}`);
+            }, delay);
+            break;
+          }
         }
       }
     }
@@ -121,16 +121,17 @@
     // エンディングをスキップ
     skipEnding() {
       for (const service in this.buttonSelectors) {
-        const { selector, offSelector } = this.buttonSelectors[service].ending;
+        const { selector, offSelector, delay } =
+          this.buttonSelectors[service].ending;
 
-        if (this.skipEndingEnabled && this.skipEnabled) {
+        if (this.skipEnabled && this.skipEndingEnabled) {
           // ON の場合 selector をクリック
           const endingButton = document.querySelector(selector);
           if (endingButton) {
             setTimeout(() => {
               endingButton.click();
               console.log(`Ending skipped for ${service}`);
-            }, this.buttonSelectors[service].ending.delay);
+            }, delay);
           }
         } else {
           // OFF の場合 offSelector をクリック
@@ -139,7 +140,7 @@
             setTimeout(() => {
               offButton.click();
               console.log(`Watch credits for ${service}`);
-            }, this.buttonSelectors[service].ending.delay);
+            }, delay);
           }
         }
       }
