@@ -19,7 +19,7 @@ HUD에는 인트로 스킵과 엔딩 스킵의 현재 상태가 표시됩니다.
 
 ## 기여
 
-버그 보고 및 기능 제안을 환영합니다. [이슈 열기](https://github.com/yossy17/streaming-video-skipper/issues) 또는 [풀 리퀘스트 생성](https://github.com/yossy17/streaming-video-skipper/pulls)을 해주세요.
+버그 보고 및 기능 제안을 환영합니다. [이슈 열기](https://github.com/yossy17/stream-skipper/issues) 또는 [풀 리퀘스트 생성](https://github.com/yossy17/stream-skipper/pulls)을 해주세요.
 
 ## 라이선스
 

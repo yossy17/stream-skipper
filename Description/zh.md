@@ -19,7 +19,7 @@ HUD显示了开头跳过和结尾跳过的当前状态。
 
 ## 贡献
 
-欢迎报告错误和提出功能建议。请[提出问题](https://github.com/yossy17/streaming-video-skipper/issues)或[创建拉取请求](https://github.com/yossy17/streaming-video-skipper/pulls)。
+欢迎报告错误和提出功能建议。请[提出问题](https://github.com/yossy17/stream-skipper/issues)或[创建拉取请求](https://github.com/yossy17/stream-skipper/pulls)。
 
 ## 许可证
 

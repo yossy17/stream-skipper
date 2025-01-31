@@ -19,7 +19,7 @@ Das HUD zeigt den aktuellen Status des Intro- und Ending-Überspringens an.
 
 ## Mitwirken
 
-Fehlerberichte und Funktionsvorschläge sind willkommen. Bitte [öffnen Sie ein Issue](https://github.com/yossy17/streaming-video-skipper/issues) oder [erstellen Sie einen Pull Request](https://github.com/yossy17/streaming-video-skipper/pulls).
+Fehlerberichte und Funktionsvorschläge sind willkommen. Bitte [öffnen Sie ein Issue](https://github.com/yossy17/stream-skipper/issues) oder [erstellen Sie einen Pull Request](https://github.com/yossy17/stream-skipper/pulls).
 
 ## Lizenz
 

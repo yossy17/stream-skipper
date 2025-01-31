@@ -19,7 +19,7 @@ HUD показывает текущее состояние пропуска вс
 
 ## Вклад в проект
 
-Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/streaming-video-skipper/issues) или [отправьте pull request](https://github.com/yossy17/streaming-video-skipper/pulls).
+Мы приветствуем сообщения об ошибках и предложения по улучшению функционала. Пожалуйста, [создайте issue](https://github.com/yossy17/stream-skipper/issues) или [отправьте pull request](https://github.com/yossy17/stream-skipper/pulls).
 
 ## Лицензия
 

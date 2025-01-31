@@ -19,7 +19,7 @@ The HUD displays the current status of intro and ending skipping.
 
 ## Contributing
 
-Bug reports and feature suggestions are welcome. Please [open an issue](https://github.com/yossy17/streaming-video-skipper/issues) or [create a pull request](https://github.com/yossy17/streaming-video-skipper/pulls).
+Bug reports and feature suggestions are welcome. Please [open an issue](https://github.com/yossy17/stream-skipper/issues) or [create a pull request](https://github.com/yossy17/stream-skipper/pulls).
 
 ## License
 

@@ -19,7 +19,7 @@ HUDには、イントロスキップとエンディングスキップの現在�
 
 ## 貢献
 
-バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/streaming-video-skipper/issues)または[プルリクエスト](https://github.com/yossy17/streaming-video-skipper/pulls)を作成してください。
+バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/stream-skipper/issues)または[プルリクエスト](https://github.com/yossy17/stream-skipper/pulls)を作成してください。
 
 ## ライセンス
 
