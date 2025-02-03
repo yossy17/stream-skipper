@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.3.1
+// @version             2.3.2
 // @author              Yos_sy
 // @match               *://*.amazon.com/gp/video/*
 // @match               *://*.amazon.ca/gp/video/*
@@ -77,7 +77,7 @@
           intro: {
             type: "single",
             delay: 0,
-            selector: "button[data-uia='player-skip-intro']",
+            selector: "button.watch-video--skip-content-button",
           },
           ending: {
             type: "multi",
