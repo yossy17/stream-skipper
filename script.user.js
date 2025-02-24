@@ -55,7 +55,6 @@
       this.setupShortcut();
       this.updateToggleButton();
       this.initHUD();
-      this.updateHUD();
       this.setupFullscreenHandler();
 
       this.buttonSelectors = {
