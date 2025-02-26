@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.3.3
+// @version             2.3.4
 // @author              Yos_sy
 // @match               *://*.amazon.com/*
 // @match               *://*.amazon.ca/*
@@ -71,6 +71,9 @@
             selector:
               "div.atvwebplayersdk-nextupcard-button.fixbm5z.f1nog967.fobx3y5",
           },
+          nextEpisode: {
+            selector: "button.atvwebplayersdk-nexttitle-button",
+          },
         },
         netflix: {
           intro: {
@@ -83,6 +86,9 @@
             delay: 0,
             selector: "button[data-uia='next-episode-seamless-button']",
             offSelector: "button[data-uia='watch-credits-seamless-button']",
+          },
+          nextEpisode: {
+            selector: "button[data-uia='control-next']",
           },
         },
       };
@@ -140,6 +146,21 @@
               offButton.click();
               console.log(`Watch credits for ${service}`);
             }, delay);
+          }
+        }
+      }
+    }
+
+    // 次のエピソードボタンをクリック
+    clickNextEpisode() {
+      for (const service in this.buttonSelectors) {
+        if (this.buttonSelectors[service].nextEpisode) {
+          const { selector } = this.buttonSelectors[service].nextEpisode;
+          const nextButton = document.querySelector(selector);
+          if (nextButton) {
+            nextButton.click();
+            console.log(`Next episode clicked for ${service}`);
+            break;
           }
         }
       }
@@ -228,6 +249,7 @@
         if (event.altKey && event.key === "z") this.toggleSkipping();
         else if (event.altKey && event.key === "x") this.toggleSkipIntro();
         else if (event.altKey && event.key === "c") this.toggleSkipEnding();
+        else if (event.altKey && event.key === "n") this.clickNextEpisode();
       });
     }
 
