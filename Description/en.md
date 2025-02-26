@@ -5,15 +5,14 @@ This script provides functionality to automatically skip intros and endings for 
 
 ## Usage
 
-You can change settings with shortcut keys.  
-The last two individual settings can only be changed when the overall skip function is turned `ON`.
-
-- `alt + z`: Toggle the overall skip function `ON`/`OFF`.
+- `alt + z`: Toggle overall skipping `ON`/`OFF`.
 - `alt + x`: Toggle intro skipping `ON`/`OFF`.
 - `alt + c`: Toggle ending skipping `ON`/`OFF`.
+- `alt + n`: Click `Next Episode` button.
 
-The script status can be checked on the HUD displayed at the top-left corner of the screen.  
-The HUD displays the current status of intro and ending skipping.
+The status of the intro and ending skip functions can be checked on the HUD displayed in the upper left corner of the screen.
+
+Individual settings for intro and ending skip functions can only be changed when the overall skip function is `ON`.
 
 ---
 

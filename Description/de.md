@@ -5,15 +5,14 @@ Dieses Skript bietet die Möglichkeit, Intros und Enden für die folgenden Diens
 
 ## Verwendung
 
-Sie können die Einstellungen mit Tastenkombinationen ändern.  
-Die letzten beiden einzelnen Einstellungen können nur geändert werden, wenn die gesamte Überspring-Funktion auf `ON` gesetzt ist.
-
 - `alt + z`: Umschalten der gesamten Überspring-Funktion `EIN`/`AUS`.
 - `alt + x`: Umschalten des Intro-Überspringens `EIN`/`AUS`.
 - `alt + c`: Umschalten des Ending-Überspringens `EIN`/`AUS`.
+- `alt + n`: Klicken die Schaltfläche `Nächste Episode`.
 
-Der Status des Skripts kann über das HUD überprüft werden, das oben links auf dem Bildschirm angezeigt wird.  
-Das HUD zeigt den aktuellen Status des Intro- und Ending-Überspringens an.
+Den Status der Intro- und End-Skip-Funktionen kann man in der HUD-Anzeige oben links auf dem Bildschirm sehen.
+
+Die individuellen Einstellungen für das Intro- und End-Skip können nur geändert werden, wenn die Gesamt-Skip-Funktion `EIN` ist.
 
 ---
 
