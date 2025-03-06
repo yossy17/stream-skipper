@@ -5,10 +5,10 @@ Dieses Skript bietet die Möglichkeit, Intros und Enden für die folgenden Diens
 
 ## Verwendung
 
-- `alt + z`: Umschalten der gesamten Überspring-Funktion `EIN`/`AUS`.
-- `alt + x`: Umschalten des Intro-Überspringens `EIN`/`AUS`.
-- `alt + c`: Umschalten des Ending-Überspringens `EIN`/`AUS`.
-- `alt + n`: Klicken die Schaltfläche `Nächste Episode`.
+- `z`: Umschalten der gesamten Überspring-Funktion `EIN`/`AUS`.
+- `x`: Umschalten des Intro-Überspringens `EIN`/`AUS`.
+- `c`: Umschalten des Ending-Überspringens `EIN`/`AUS`.
+- `n`: Klicken die Schaltfläche `Nächste Episode`.
 
 Den Status der Intro- und End-Skip-Funktionen kann man in der HUD-Anzeige oben links auf dem Bildschirm sehen.
 

@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.3.4
+// @version             2.3.5
 // @author              Yos_sy
 // @match               *://*.amazon.com/*
 // @match               *://*.amazon.ca/*
@@ -246,10 +246,10 @@
     // キーボードショートカットの設定
     setupShortcut() {
       document.addEventListener("keydown", (event) => {
-        if (event.altKey && event.key === "z") this.toggleSkipping();
-        else if (event.altKey && event.key === "x") this.toggleSkipIntro();
-        else if (event.altKey && event.key === "c") this.toggleSkipEnding();
-        else if (event.altKey && event.key === "n") this.clickNextEpisode();
+        if (event.key === "z") this.toggleSkipping();
+        else if (event.key === "x") this.toggleSkipIntro();
+        else if (event.key === "c") this.toggleSkipEnding();
+        else if (event.key === "n") this.clickNextEpisode();
       });
     }
 
