@@ -5,9 +5,9 @@ This script provides functionality to automatically skip intros and endings for 
 
 ## Usage
 
-- `z`: Toggle overall skipping `ON`/`OFF`.
-- `x`: Toggle intro skipping `ON`/`OFF`.
-- `c`: Toggle ending skipping `ON`/`OFF`.
+- `alt + z`: Toggle overall skipping `ON`/`OFF`.
+- `alt + x`: Toggle intro skipping `ON`/`OFF`.
+- `alt + c`: Toggle ending skipping `ON`/`OFF`.
 - `n`: Click `Next Episode` button.
 
 The status of the intro and ending skip functions can be checked on the HUD displayed in the upper left corner of the screen.
