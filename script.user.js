@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.3.6
+// @version             2.3.7
 // @author              Yos_sy
 // @match               *://*.amazon.com/*
 // @match               *://*.amazon.ca/*
@@ -66,10 +66,12 @@
               "button.fqye4e3.f1ly7q5u.fk9c3ap.fz9ydgy.f1xrlb00.f1hy0e6n.fgbpje3.f1uteees.f1h2a8xb.atvwebplayersdk-skipelement-button.fjgzbz9.fiqc9rt.fg426ew.f1ekwadg",
           },
           ending: {
-            type: "single",
+            type: "multi",
             delay: 1500,
             selector:
               "div.atvwebplayersdk-nextupcard-button.fixbm5z.f1nog967.fobx3y5",
+            offSelector:
+              "div.fxviu8c > button.atvwebplayersdk-nextupcardhide-button",
           },
           nextEpisode: {
             selector: "button.atvwebplayersdk-nexttitle-button",
