@@ -13,7 +13,7 @@
 // @description:ko      인트로와 엔딩을 스킵합니다
 // @description:ru      пропускает интро и окончание
 // @description:de      Überspringt Intro und Ende
-// @version             2.3.7
+// @version             2.3.8
 // @author              Yos_sy
 // @match               *://*.amazon.com/*
 // @match               *://*.amazon.ca/*
@@ -41,6 +41,9 @@
 // @license             MIT
 // @grant               GM_setValue
 // @grant               GM_getValue
+// @updateURL           https://github.com/yossy17/stream-skipper/raw/master/userscript.user.js
+// @downloadURL         https://github.com/yossy17/stream-skipper/raw/master/userscript.user.js
+// @supportURL          https://github.com/yossy17/stream-skipper
 // ==/UserScript==
 
 (function () {
@@ -61,13 +64,13 @@
         primeVideo: {
           intro: {
             type: "single",
-            delay: 1500,
+            delay: 5000,
             selector:
               "button.fqye4e3.f1ly7q5u.fk9c3ap.fz9ydgy.f1xrlb00.f1hy0e6n.fgbpje3.f1uteees.f1h2a8xb.atvwebplayersdk-skipelement-button.fjgzbz9.fiqc9rt.fg426ew.f1ekwadg",
           },
           ending: {
             type: "multi",
-            delay: 1500,
+            delay: 500,
             selector:
               "div.atvwebplayersdk-nextupcard-button.fixbm5z.f1nog967.fobx3y5",
             offSelector:
@@ -180,7 +183,9 @@
         right: 24px;
         z-index: 2147483647;
         color: #fff;
-        background-color: ${this.skipEnabled ? "rgba(0, 128, 0, 0.7)" : "rgba(255, 0, 0, 0.7)"};
+        background-color: ${
+          this.skipEnabled ? "rgba(0, 128, 0, 0.7)" : "rgba(255, 0, 0, 0.7)"
+        };
         border: 2px solid #fff;
         padding: 10px 20px;
         border-radius: 25px;
