@@ -1,0 +1,46 @@
+export const metadata = {
+  name: {
+    en: "Stream Skipper",
+    ja: "Stream Skipper",
+    "zh-CN": "Stream Skipper",
+    ko: "Stream Skipper",
+  },
+  description: {
+    en: "Skip intros and endings on Netflix and Prime Video",
+    ja: "Netflix, Prime Video でイントロとエンディングをスキップできます",
+    "zh-CN": "跳过 Netflix 和 Prime Video 上的片头和片尾",
+    ko: "Netflix 및 Prime Video 에서 인트로와 엔딩 건너뛰기",
+  },
+
+  version: "0.0.0",
+  author: "Yos_sy",
+  match: [
+    "*://*.amazon.com/*",
+    "*://*.amazon.ca/*",
+    "*://*.amazon.com.mx/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.fr/*",
+    "*://*.amazon.it/*",
+    "*://*.amazon.es/*",
+    "*://*.amazon.nl/*",
+    "*://*.amazon.se/*",
+    "*://*.amazon.pl/*",
+    "*://*.amazon.co.jp/*",
+    "*://*.amazon.com.au/*",
+    "*://*.amazon.in/*",
+    "*://*.amazon.cn/*",
+    "*://*.amazon.com.br/*",
+    "*://*.amazon.sa/*",
+    "*://*.amazon.ae/*",
+    "*://*.amazon.sg/*",
+    "*://*.amazon.com.tr/*",
+    "*://*.netflix.com/*",
+  ],
+  namespace: "http://tampermonkey.net/",
+  icon: "icon",
+  grant: ["GM_setValue", "GM_getValue"],
+  license: "MIT",
+};
+
+export default metadata;

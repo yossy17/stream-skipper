@@ -1,25 +1,20 @@
-このスクリプトは、以下のサービスでイントロとエンディングを自動的にスキップする機能を提供します。
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENCE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Greasy Fork](https://img.shields.io/badge/GreasyFork-670000?logo=greasyfork&logoColor=white)](https://greasyfork.org/)
 
-- [Prime Video](https://amazon.co.jp/gp/video/storefront)
-- [Netflix](https://netflix.com)
+## Overview
 
-## 使い方
+**Stream Speeder**は、Netflix, Prime Video でイントロとエンディングをスキップできます｡
 
-- `alt + z`: 全体のスキップ機能の`オン`/`オフ`を切り替えます。
-- `alt + x`: イントロスキップの`オン`/`オフ`を切り替えます。
-- `alt + c`: エンディングスキップの`オン`/`オフ`を切り替えます。
-- `n`: `次のエピソード`ボタンをクリックします。
+## Features
 
-イントロ,エンディングスキップ機能の状態は、画面左上に表示されるHUDで確認できます。
+| Key |          Description           |
+| :-: | :----------------------------: |
+|  z  |     スキップ機能の切り替え     |
+|  x  |   イントロスキップの切り替え   |
+|  c  | エンディングスキップの切り替え |
+|  n  |         次のエピソード         |
 
-イントロ,エンディングスキップ機能の個別設定は全体のスキップ機能が`オン`状態のみ変更できます。
+## License
 
----
-
-## 貢献
-
-バグの報告や機能の提案は大歓迎です。[問題を報告](https://github.com/yossy17/stream-skipper/issues)または[プルリクエスト](https://github.com/yossy17/stream-skipper/pulls)を作成してください。
-
-## ライセンス
-
-このプロジェクトはMITライセンスの下で公開されています。
+このプロジェクトは、 [MIT](LICENCE) ライセンスに基づきます。
